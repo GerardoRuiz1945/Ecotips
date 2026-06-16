@@ -1,0 +1,161 @@
+.page-container {
+  padding: 40px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.page-header h1 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #1a3d1a;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  font-size: 13px;
+  color: #4a6741;
+  margin-bottom: 24px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: var(--color-background-primary);
+  border: 1px solid var(--color-border-tertiary);
+  border-radius: 30px;
+  padding: 6px 6px 6px 16px;
+  max-width: 500px;
+  margin: 0 auto 20px;
+  gap: 10px;
+}
+
+.search-container i {
+  color: var(--color-text-secondary);
+  font-size: 18px;
+}
+
+.search-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--color-text-primary);
+}
+
+.btn-primary {
+  background: #2d6a2d;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filter-chips {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: #f0f7ed;
+  border: 1px solid #c8e6c9;
+  color: #2d6a2d;
+  font-size: 11px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip.active, .chip:hover {
+  background: #2d6a2d;
+  color: #fff;
+  border-color: #2d6a2d;
+}
+
+/* Reutilizamos el estilo de las tarjetas pero ampliamos la cuadrícula */
+.tip-grid-large {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.tip-card {
+  background: var(--color-background-primary);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.tip-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.tip-card-img {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.tip-card-body {
+  padding: 14px;
+}
+
+.tip-tag {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.tag-diy {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+.tip-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.tip-card-meta {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.eco-score {
+  margin-top: 10px;
+  background: #f0f7ed;
+  border-radius: 6px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.eco-score .lbl { color: #4a6741; }
+.eco-score .val { font-weight: 500; color: #1b5e20; }

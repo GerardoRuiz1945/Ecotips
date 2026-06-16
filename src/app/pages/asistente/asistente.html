@@ -1,0 +1,75 @@
+<div class="ai-layout">
+  <aside class="ai-sidebar">
+    <button class="btn-new-chat">
+      <i class="ti ti-plus" aria-hidden="true"></i> Nuevo chat
+    </button>
+
+    <div class="sidebar-section">
+      <h4>Sugerencias rápidas</h4>
+      <ul class="suggestion-list">
+        <li><i class="ti ti-camera"></i> Identificar residuo por foto</li>
+        <li><i class="ti ti-bulb"></i> Ideas con botellas PET</li>
+        <li><i class="ti ti-leaf"></i> Calcular huella de carbono</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h4>Hoy</h4>
+      <ul class="history-list">
+        <li><i class="ti ti-message-2"></i> Maceta colgante DIY</li>
+        <li><i class="ti ti-message-2"></i> Separación de baterías</li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="ai-chat-area">
+    <div class="chat-header-main">
+      <div class="ai-identity">
+        <i class="ti ti-robot"></i>
+        <div>
+          <h2>EcoBot</h2>
+          <p>Tu asistente inteligente para un consumo responsable</p>
+        </div>
+      </div>
+      <span class="ods-badge-small">ODS 12</span>
+    </div>
+
+    <div class="chat-messages">
+      <div class="message ai">
+        <div class="avatar"><i class="ti ti-robot"></i></div>
+        <div class="content">
+          ¡Hola! Soy EcoBot. Estoy aquí para ayudarte a reducir, reutilizar y reciclar. ¿Qué residuo tienes a la mano o qué duda ecológica tienes hoy?
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="content">
+          Tengo un ESP32 y un sensor de humedad que me sobraron de una práctica. ¿Qué proyecto ecológico puedo armar que envíe datos por WebSockets?
+        </div>
+        <div class="avatar-user">L</div>
+      </div>
+
+      <div class="message ai">
+        <div class="avatar"><i class="ti ti-robot"></i></div>
+        <div class="content">
+          ¡Excelente idea para reutilizar tus componentes! Puedes armar un <strong>Sistema de Riego Automatizado</strong> para el cuidado de la flora en tu casa.
+          <br><br>
+          Al conectar el ESP32 a tu red local, puedes programarlo para que lea el sensor y envíe una alerta por WebSockets a esta misma página web cuando la planta necesite agua, evitando el desperdicio. ¿Te gustaría que te genere el diagrama de conexiones básico para esto?
+          <div class="impact-chip mt-2">
+            <i class="ti ti-droplet"></i> Impacto estimado: Ahorro de 15L de agua al mes.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input-wrapper">
+      <div class="chat-input-container">
+        <button class="btn-icon"><i class="ti ti-camera" aria-hidden="true"></i></button>
+        <button class="btn-icon"><i class="ti ti-paperclip" aria-hidden="true"></i></button>
+        <input type="text" placeholder="Escribe un mensaje o sube una foto de tu residuo..." readonly>
+        <button class="btn-send"><i class="ti ti-send" aria-hidden="true"></i></button>
+      </div>
+      <p class="disclaimer">EcoBot puede cometer errores al identificar materiales. Verifica la información local de reciclaje.</p>
+    </div>
+  </main>
+</div>
