@@ -1,0 +1,44 @@
+name: EcoTips CI-CD Pipeline
+
+# El pipeline se ejecutará automáticamente cada vez que hagas un "push" a la rama main
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  # TRABAJO 1: Compilación y Calidad de Código
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Descargar codigo del repositorio
+      uses: actions/checkout@v4
+
+    - name: Configurar entorno de Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-size: '20.x'
+        cache: 'npm'
+
+    - name: Instalar dependencias del proyecto
+      run: npm ci
+
+    - name: Validar compilacion de la App
+      run: npm run build --if-present
+
+  # TRABAJO 2: Empaquetado en Contenedor (Docker)
+  docker-build:
+    needs: build-and-test # Este job solo inicia si el anterior terminó en verde
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Descargar codigo del repositorio
+      uses: actions/checkout@v4
+
+    - name: Configurar herramientas de Docker
+      uses: docker/setup-buildx-action@v3
+
+    - name: Simular empaquetado de imagen Docker
+      run: |
+        echo "Compilando la imagen Docker para EcoTips..."
+        echo "Simulando push de la imagen a Docker Hub..."
