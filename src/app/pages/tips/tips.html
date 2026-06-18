@@ -1,15 +1,12 @@
 <div class="page-container">
-  <!-- ENCABEZADO Y BUSCADOR -->
   <div class="page-header">
     <h1>Tips y Manualidades DIY</h1>
     <p>Descubre formas creativas de darle una segunda vida a tus residuos y disminuir tu huella ambiental.</p>
-
     <div class="search-container">
       <i class="ti ti-search" aria-hidden="true"></i>
       <input type="text" placeholder="Buscar ideas (ej. botellas, cartón, jardín...)">
       <button class="btn-primary">Buscar</button>
     </div>
-
     <div class="filter-chips">
       <span class="chip active">Todos</span>
       <span class="chip">🪴 Jardinería</span>
@@ -18,89 +15,64 @@
     </div>
   </div>
 
-  <!-- CATÁLOGO DE TIPS -->
   <div class="tip-grid-large">
-    <!-- Tarjeta 1 -->
-    <div class="tip-card">
+    <div class="tip-card" (click)="irATip('maceta-pet')" style="cursor:pointer;">
       <div class="tip-card-img" style="background:#dcedc8;">🪴</div>
       <div class="tip-card-body">
         <span class="tip-tag tag-diy">DIY</span>
         <div class="tip-card-title">Maceta con botella PET reciclada</div>
         <div class="tip-card-meta"><i class="ti ti-clock" aria-hidden="true"></i> 15 min · Fácil</div>
-        <div class="eco-score">
-          <span class="lbl">Impacto ecológico</span>
-          <span class="val">Alto ★★★</span>
-        </div>
+        <div class="eco-score"><span class="lbl">Impacto ecológico</span><span class="val">Alto ★★★</span></div>
       </div>
     </div>
 
-    <!-- Tarjeta 2 -->
-    <div class="tip-card">
+    <div class="tip-card" (click)="irATip('limpiador-vinagre')" style="cursor:pointer;">
       <div class="tip-card-img" style="background:#fff3e0;">🧴</div>
       <div class="tip-card-body">
         <span class="tip-tag tag-diy">DIY</span>
         <div class="tip-card-title">Limpiador multiusos con vinagre y naranja</div>
         <div class="tip-card-meta"><i class="ti ti-clock" aria-hidden="true"></i> 10 min · Fácil</div>
-        <div class="eco-score">
-          <span class="lbl">Impacto ecológico</span>
-          <span class="val">Alto ★★★</span>
-        </div>
+        <div class="eco-score"><span class="lbl">Impacto ecológico</span><span class="val">Alto ★★★</span></div>
       </div>
     </div>
 
-    <!-- Tarjeta 3 -->
-    <div class="tip-card">
+    <div class="tip-card" (click)="irATip('organizador-carton')" style="cursor:pointer;">
       <div class="tip-card-img" style="background:#e8eaf6;">📦</div>
       <div class="tip-card-body">
         <span class="tip-tag tag-diy">DIY</span>
         <div class="tip-card-title">Organizador de escritorio con cajas de cartón</div>
         <div class="tip-card-meta"><i class="ti ti-clock" aria-hidden="true"></i> 25 min · Medio</div>
-        <div class="eco-score">
-          <span class="lbl">Impacto ecológico</span>
-          <span class="val">Medio ★★</span>
-        </div>
+        <div class="eco-score"><span class="lbl">Impacto ecológico</span><span class="val">Medio ★★</span></div>
       </div>
     </div>
 
-    <!-- Tarjeta 4 -->
-    <div class="tip-card">
+    <div class="tip-card" (click)="irATip('velas-frasco')" style="cursor:pointer;">
       <div class="tip-card-img" style="background:#fce4ec;">🕯️</div>
       <div class="tip-card-body">
         <span class="tip-tag tag-diy">DIY</span>
         <div class="tip-card-title">Velas aromáticas en frascos de mermelada</div>
         <div class="tip-card-meta"><i class="ti ti-clock" aria-hidden="true"></i> 40 min · Medio</div>
-        <div class="eco-score">
-          <span class="lbl">Impacto ecológico</span>
-          <span class="val">Alto ★★★</span>
-        </div>
+        <div class="eco-score"><span class="lbl">Impacto ecológico</span><span class="val">Alto ★★★</span></div>
       </div>
     </div>
 
-    <!-- Tarjeta 5 -->
-    <div class="tip-card">
+    <div class="tip-card" (click)="irATip('riego-goteo')" style="cursor:pointer;">
       <div class="tip-card-img" style="background:#e0f7fa;">💧</div>
       <div class="tip-card-body">
         <span class="tip-tag tag-diy">DIY</span>
         <div class="tip-card-title">Sistema de riego por goteo casero</div>
         <div class="tip-card-meta"><i class="ti ti-clock" aria-hidden="true"></i> 20 min · Fácil</div>
-        <div class="eco-score">
-          <span class="lbl">Impacto ecológico</span>
-          <span class="val">Alto ★★★</span>
-        </div>
+        <div class="eco-score"><span class="lbl">Impacto ecológico</span><span class="val">Alto ★★★</span></div>
       </div>
     </div>
 
-    <!-- Tarjeta 6 -->
-    <div class="tip-card">
+    <div class="tip-card" (click)="irATip('bolsa-playera')" style="cursor:pointer;">
       <div class="tip-card-img" style="background:#f1f8e9;">👜</div>
       <div class="tip-card-body">
         <span class="tip-tag tag-diy">DIY</span>
         <div class="tip-card-title">Bolsa reutilizable con una playera vieja</div>
         <div class="tip-card-meta"><i class="ti ti-clock" aria-hidden="true"></i> 15 min · Fácil</div>
-        <div class="eco-score">
-          <span class="lbl">Impacto ecológico</span>
-          <span class="val">Alto ★★★</span>
-        </div>
+        <div class="eco-score"><span class="lbl">Impacto ecológico</span><span class="val">Alto ★★★</span></div>
       </div>
     </div>
   </div>

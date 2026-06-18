@@ -107,7 +107,14 @@
   width: 100%;
 }
 
+/* Optimización para el estado Hover del botón interactivo */
 .btn-outline-small:hover {
   background: #f0f7ed;
   border-color: #2d6a2d;
+  box-shadow: 0 2px 8px rgba(45, 106, 45, 0.15); /* Añade un sutil brillo verde */
+}
+
+/* Efecto de presión activa cuando hagan click */
+.btn-outline-small:active {
+  transform: scale(0.98);
 }

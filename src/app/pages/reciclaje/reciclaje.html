@@ -15,7 +15,7 @@
         <li><i class="ti ti-check"></i> Aplasta para ahorrar espacio.</li>
         <li><i class="ti ti-check"></i> Deja la tapa puesta.</li>
       </ul>
-      <button class="btn-outline-small">Ver centros de acopio</button>
+      <button class="btn-outline-small" (click)="verCentros('plasticos')">Ver centros de acopio</button>
     </div>
 
     <div class="recycle-card">
@@ -27,7 +27,7 @@
         <li><i class="ti ti-check"></i> Desarma y dobla las cajas.</li>
         <li><i class="ti ti-x" style="color: #d32f2f;"></i> No incluyas cajas de pizza con grasa.</li>
       </ul>
-      <button class="btn-outline-small">Ver centros de acopio</button>
+      <button class="btn-outline-small" (click)="verCentros('papel-carton')">Ver centros de acopio</button>
     </div>
 
     <div class="recycle-card">
@@ -39,7 +39,7 @@
         <li><i class="ti ti-check"></i> Retira las tapas metálicas o plásticas.</li>
         <li><i class="ti ti-x" style="color: #d32f2f;"></i> No mezcles con espejos, focos o ventanas.</li>
       </ul>
-      <button class="btn-outline-small">Ver centros de acopio</button>
+      <button class="btn-outline-small" (click)="verCentros('vidrio')">Ver centros de acopio</button>
     </div>
 
     <div class="recycle-card">
@@ -51,7 +51,7 @@
         <li><i class="ti ti-alert-triangle" style="color: #f57c00;"></i> Aísa las baterías infladas o dañadas.</li>
         <li><i class="ti ti-alert-circle" style="color: #f57c00;"></i> Requieren acopio o manejo especial.</li>
       </ul>
-      <button class="btn-outline-small">Ver centros de acopio</button>
+      <button class="btn-outline-small" (click)="verCentros('electronicos')">Ver centros de acopio</button>
     </div>
 
   </div>

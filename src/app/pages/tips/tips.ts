@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tips',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './tips.css',
 })
 export class Tips {
+  constructor(private router: Router) {}
 
+  irATip(id: string) {
+    this.router.navigate(['/tips', id]);
+  }
 }

@@ -1,0 +1,29 @@
+@if (noticia) {
+  <div class="noticia-container">
+    <button class="btn-back" (click)="regresar()">
+      <i class="ti ti-arrow-left"></i> Volver a Noticias
+    </button>
+
+    <div class="noticia-hero">
+      <div class="noticia-emoji">{{ noticia.emoji }}</div>
+      <span class="tip-tag">{{ noticia.tag }}</span>
+      <h1>{{ noticia.titulo }}</h1>
+      <p class="noticia-subtitulo">{{ noticia.subtitulo }}</p>
+      <div class="noticia-meta">
+        <span><i class="ti ti-calendar"></i> {{ noticia.fecha }}</span>
+        <span><i class="ti ti-clock"></i> {{ noticia.lectura }}</span>
+      </div>
+    </div>
+
+    <div class="noticia-body">
+      @for (parrafo of noticia.cuerpo; track $index) {
+        <p>{{ parrafo }}</p>
+      }
+    </div>
+  </div>
+} @else {
+  <div class="not-found">
+    <p>Noticia no encontrada.</p>
+    <button class="btn-back" (click)="regresar()">Volver a Noticias</button>
+  </div>
+}

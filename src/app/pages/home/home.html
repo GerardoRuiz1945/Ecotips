@@ -1,186 +1,219 @@
 <div class="hero">
-      <div>
-        <span class="hero-badge"><i class="ti ti-award" aria-hidden="true"></i> ODS 12 · Agenda 2030</span>
-        <h1>Consume menos,<br>vive mejor.<br>Empieza hoy.</h1>
-        <p>Descubre ideas para reutilizar, reciclar y reducir tu huella ambiental con ayuda de Inteligencia Artificial.</p>
-        <div class="hero-btns">
-          <button class="btn-primary"><i class="ti ti-bulb" aria-hidden="true"></i> Ver tips</button>
-          <button class="btn-outline"><i class="ti ti-robot" aria-hidden="true"></i> Usar IA</button>
-        </div>
+  <div>
+    <span class="hero-badge"><i class="ti ti-award" aria-hidden="true"></i> ODS 12 · Agenda 2030</span>
+    <h1>Consume menos,<br>vive mejor.<br>Empieza hoy.</h1>
+    <p>Descubre ideas para reutilizar, reciclar y reducir tu huella ambiental con ayuda de Inteligencia Artificial.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" (click)="irATips()"><i class="ti ti-bulb" aria-hidden="true"></i> Ver tips</button>
+      <button class="btn-outline" (click)="irAAsistente()"><i class="ti ti-robot" aria-hidden="true"></i> Usar IA</button>
+      <button class="btn-secondary" (click)="abrirModal()"><i class="ti ti-user-plus" aria-hidden="true"></i> Únete gratis</button>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-visual-title">
+      <i class="ti ti-chart-bar" style="color:#2d6a2d;" aria-hidden="true"></i>
+      Tu impacto esta semana
+      <span class="odsbadge">ODS 12</span>
+    </div>
+    <div class="stat-row">
+      <div class="stat-chip">
+        <div class="num">3.2 kg</div>
+        <div class="lbl">Residuos evitados</div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-visual-title">
-          <i class="ti ti-chart-bar" style="color:#2d6a2d;" aria-hidden="true"></i>
-          Tu impacto esta semana
-          <span class="odsbadge">ODS 12</span>
+      <div class="stat-chip">
+        <div class="num">8</div>
+        <div class="lbl">Tips aplicados</div>
+      </div>
+      <div class="stat-chip">
+        <div class="num">+12%</div>
+        <div class="lbl">Mejora mensual</div>
+      </div>
+    </div>
+    <div style="background:#f0f7ed; border-radius:var(--border-radius-md); padding:8px 12px; font-size:11px; color:#4a6741; display:flex; gap:8px; align-items:center;">
+      <i class="ti ti-sparkles" style="color:#2d6a2d; font-size:16px;" aria-hidden="true"></i>
+      La IA sugiere: intenta compostar tus residuos orgánicos esta semana.
+    </div>
+  </div>
+</div>
+
+@if (mostrarModal) {
+  <div class="modal-overlay" (click)="cerrarModal()">
+    <div class="modal-box" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="cerrarModal()"><i class="ti ti-x"></i></button>
+      <div class="modal-header">
+        <i class="ti ti-leaf" style="color:#2d6a2d; font-size:28px;"></i>
+        <h2>Únete a EcoTips</h2>
+        <p>Crea tu cuenta y empieza a transformar tus hábitos</p>
+      </div>
+      <div class="modal-form">
+        <div class="form-group">
+          <label><i class="ti ti-user"></i> Nombre completo</label>
+          <input type="text" placeholder="Tu nombre">
         </div>
-        <div class="stat-row">
-          <div class="stat-chip">
-            <div class="num">3.2 kg</div>
-            <div class="lbl">Residuos evitados</div>
-          </div>
-          <div class="stat-chip">
-            <div class="num">8</div>
-            <div class="lbl">Tips aplicados</div>
-          </div>
-          <div class="stat-chip">
-            <div class="num">+12%</div>
-            <div class="lbl">Mejora mensual</div>
-          </div>
+        <div class="form-group">
+          <label><i class="ti ti-mail"></i> Correo electrónico</label>
+          <input type="email" placeholder="correo@ejemplo.com">
         </div>
-        <div style="background:#f0f7ed; border-radius:var(--border-radius-md); padding:8px 12px; font-size:11px; color:#4a6741; display:flex; gap:8px; align-items:center;">
-          <i class="ti ti-sparkles" style="color:#2d6a2d; font-size:16px;" aria-hidden="true"></i>
-          La IA sugiere: intenta compostar tus residuos orgánicos esta semana.
+        <div class="form-group">
+          <label><i class="ti ti-lock"></i> Contraseña</label>
+          <input type="password" placeholder="Mínimo 8 caracteres">
+        </div>
+        <button class="btn-primary btn-full">Crear cuenta gratis</button>
+        <p class="modal-login">¿Ya tienes cuenta? <a href="#">Inicia sesión</a></p>
+      </div>
+    </div>
+  </div>
+}
+
+<hr class="divider">
+
+<div class="section">
+  <div class="section-header">
+    <h2 class="section-title">Tips y manualidades DIY</h2>
+    <a (click)="irATips()" class="see-all" style="cursor:pointer;">Ver todos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+  </div>
+  <div class="tip-grid">
+    <div class="tip-card" (click)="irATip('maceta-pet')" style="cursor:pointer;">
+      <div class="tip-card-img" style="background:#dcedc8;">🪴</div>
+      <div class="tip-card-body">
+        <span class="tip-tag tag-diy">DIY</span>
+        <div class="tip-card-title">Maceta con botella PET reciclada</div>
+        <div class="tip-card-meta"><i class="ti ti-clock" style="font-size:12px;" aria-hidden="true"></i> 15 min · Fácil</div>
+        <div class="eco-score">
+          <span class="lbl">Impacto ecológico</span>
+          <span class="val">Alto ★★★</span>
         </div>
       </div>
     </div>
-
-    <hr class="divider">
-
-    <div class="section">
-      <div class="section-header">
-        <h2 class="section-title">Tips y manualidades DIY</h2>
-        <a href="#" class="see-all">Ver todos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
-      </div>
-      <div class="tip-grid">
-        <div class="tip-card">
-          <div class="tip-card-img" style="background:#dcedc8;">🪴</div>
-          <div class="tip-card-body">
-            <span class="tip-tag tag-diy">DIY</span>
-            <div class="tip-card-title">Maceta con botella PET reciclada</div>
-            <div class="tip-card-meta"><i class="ti ti-clock" style="font-size:12px;" aria-hidden="true"></i> 15 min · Fácil</div>
-            <div class="eco-score">
-              <span class="lbl">Impacto ecológico</span>
-              <span class="val">Alto ★★★</span>
-            </div>
-          </div>
-        </div>
-        <div class="tip-card">
-          <div class="tip-card-img" style="background:#e3f2fd;">♻️</div>
-          <div class="tip-card-body">
-            <span class="tip-tag tag-rec">Reciclaje</span>
-            <div class="tip-card-title">Cómo separar residuos correctamente</div>
-            <div class="tip-card-meta"><i class="ti ti-clock" style="font-size:12px;" aria-hidden="true"></i> 5 min · Básico</div>
-            <div class="eco-score">
-              <span class="lbl">Impacto ecológico</span>
-              <span class="val">Medio ★★</span>
-            </div>
-          </div>
-        </div>
-        <div class="tip-card">
-          <div class="tip-card-img" style="background:#fff3e0;">🧴</div>
-          <div class="tip-card-body">
-            <span class="tip-tag tag-diy">DIY</span>
-            <div class="tip-card-title">Limpiador multiusos con vinagre y naranja</div>
-            <div class="tip-card-meta"><i class="ti ti-clock" style="font-size:12px;" aria-hidden="true"></i> 10 min · Fácil</div>
-            <div class="eco-score">
-              <span class="lbl">Impacto ecológico</span>
-              <span class="val">Alto ★★★</span>
-            </div>
-          </div>
+    <div class="tip-card" (click)="irATip('separar-residuos')" style="cursor:pointer;">
+      <div class="tip-card-img" style="background:#e3f2fd;">♻️</div>
+      <div class="tip-card-body">
+        <span class="tip-tag tag-rec">Reciclaje</span>
+        <div class="tip-card-title">Cómo separar residuos correctamente</div>
+        <div class="tip-card-meta"><i class="ti ti-clock" style="font-size:12px;" aria-hidden="true"></i> 5 min · Básico</div>
+        <div class="eco-score">
+          <span class="lbl">Impacto ecológico</span>
+          <span class="val">Medio ★★</span>
         </div>
       </div>
     </div>
-
-    <hr class="divider">
-
-    <div class="ai-section">
-      <div class="ai-info">
-        <h2>Asistente IA · EcoTips</h2>
-        <p>Nuestro asistente de Inteligencia Artificial genera ideas personalizadas para reutilizar tus residuos y calcula el impacto ecológico real de cada acción.</p>
-        <div class="ai-features">
-          <div class="ai-feat">
-            <i class="ti ti-camera" aria-hidden="true"></i>
-            <div class="ai-feat-text">
-              <div class="title">Clasifica tu residuo</div>
-              <div class="desc">Toma una foto y la IA te indica qué es y cómo desecharlo en tu ciudad.</div>
-            </div>
-          </div>
-          <div class="ai-feat">
-            <i class="ti ti-bulb" aria-hidden="true"></i>
-            <div class="ai-feat-text">
-              <div class="title">Ideas DIY personalizadas</div>
-              <div class="desc">Genera manualidades y usos creativos según el material que tienes.</div>
-            </div>
-          </div>
-          <div class="ai-feat">
-            <i class="ti ti-leaf" aria-hidden="true"></i>
-            <div class="ai-feat-text">
-              <div class="title">Métrica ecológica</div>
-              <div class="desc">Cada idea incluye su impacto ambiental positivo calculado por IA.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="chat-box">
-        <div class="chat-header">
-          <i class="ti ti-robot" aria-hidden="true"></i>
-          <span>EcoBot · Asistente IA</span>
-        </div>
-        <div class="chat-body">
-          <div class="bubble-user">Tengo una botella de plástico PET, ¿qué puedo hacer con ella?</div>
-          <div class="bubble-ai">
-            ¡Hay muchas opciones! Con tu botella PET puedes:
-            <div class="idea-chips">
-              <span class="idea-chip">🪴 Maceta colgante</span>
-              <span class="idea-chip">🐦 Comedero de aves</span>
-              <span class="idea-chip">🖊️ Portalápices</span>
-              <span class="idea-chip">💧 Mini invernadero</span>
-            </div>
-          </div>
-          <div class="bubble-ai" style="font-size:10px; color:#2d6a2d; background:#e8f5e9; border-color:#a5d6a7;">
-            Impacto estimado: evitar 0.03 kg de CO₂ y extender la vida útil del plástico 12 meses.
-          </div>
-        </div>
-        <div class="chat-input">
-          <input type="text" placeholder="Escribe tu residuo o duda..." readonly>
-          <button class="chat-send"><i class="ti ti-send" aria-hidden="true"></i></button>
+    <div class="tip-card" (click)="irATip('limpiador-vinagre')" style="cursor:pointer;">
+      <div class="tip-card-img" style="background:#fff3e0;">🧴</div>
+      <div class="tip-card-body">
+        <span class="tip-tag tag-diy">DIY</span>
+        <div class="tip-card-title">Limpiador multiusos con vinagre y naranja</div>
+        <div class="tip-card-meta"><i class="ti ti-clock" style="font-size:12px;" aria-hidden="true"></i> 10 min · Fácil</div>
+        <div class="eco-score">
+          <span class="lbl">Impacto ecológico</span>
+          <span class="val">Alto ★★★</span>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <hr class="divider">
+<hr class="divider">
 
-    <div class="section">
-      <div class="section-header">
-        <h2 class="section-title">Noticias y artículos</h2>
-        <a href="#" class="see-all">Ver más <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
-      </div>
-      <div class="news-grid">
-        <div class="news-main">
-          <div class="news-main-img">🌎</div>
-          <div class="news-main-body">
-            <span class="tip-tag tag-news">Medio ambiente</span>
-            <div style="font-size:13px; font-weight:500; color:var(--color-text-primary); margin-bottom:6px; line-height:1.4;">México avanza en metas de reducción de residuos para 2030</div>
-            <div style="font-size:11px; color:var(--color-text-secondary); line-height:1.5;">El gobierno federal presentó el nuevo plan de gestión de residuos sólidos alineado con la Agenda 2030 de la ONU...</div>
-            <div style="font-size:10px; color:var(--color-text-secondary); margin-top:8px; display:flex; gap:12px;">
-              <span><i class="ti ti-calendar" style="font-size:12px;" aria-hidden="true"></i> 3 jun 2026</span>
-              <span><i class="ti ti-clock" style="font-size:12px;" aria-hidden="true"></i> 4 min lectura</span>
-            </div>
-          </div>
+<div class="ai-section">
+  <div class="ai-info">
+    <h2>Asistente IA · EcoTips</h2>
+    <p>Nuestro asistente de Inteligencia Artificial genera ideas personalizadas para reutilizar tus residuos y calcula el impacto ecológico real de cada acción.</p>
+
+    <div class="ai-features">
+      <div class="ai-feat">
+        <div class="ai-feat-text">
+          <div class="title">Clasifica tu residuo</div>
+          <div class="desc">Toma una foto y la IA te indica qué es y cómo desecharlo en tu ciudad.</div>
         </div>
-        <div class="news-list">
-          <div class="news-item">
-            <div class="news-item-title">Guadalajara suma más centros de acopio en 2026</div>
-            <div class="news-item-meta">
-              <span><i class="ti ti-calendar" style="font-size:11px;" aria-hidden="true"></i> 1 jun 2026</span>
-              <span>2 min</span>
-            </div>
-          </div>
-          <div class="news-item">
-            <div class="news-item-title">Economía circular: el futuro de la manufactura responsable</div>
-            <div class="news-item-meta">
-              <span><i class="ti ti-calendar" style="font-size:11px;" aria-hidden="true"></i> 28 may 2026</span>
-              <span>5 min</span>
-            </div>
-          </div>
-          <div class="news-item">
-            <div class="news-item-title">5 apps para medir tu huella de carbono en México</div>
-            <div class="news-item-meta">
-              <span><i class="ti ti-calendar" style="font-size:11px;" aria-hidden="true"></i> 25 may 2026</span>
-              <span>3 min</span>
-            </div>
-          </div>
+      </div>
+      <div class="ai-feat">
+        <div class="ai-feat-text">
+          <div class="title">Ideas DIY personalizadas</div>
+          <div class="desc">Genera manualidades y usos creativos según el material que tienes.</div>
+        </div>
+      </div>
+      <div class="ai-feat">
+        <div class="ai-feat-text">
+          <div class="title">Métrica ecológica</div>
+          <div class="desc">Cada idea incluye su impacto ambiental positivo calculado por IA.</div>
         </div>
       </div>
     </div>
+    <button class="btn-primary" style="margin-top:16px;" (click)="irAAsistente()">
+      <i class="ti ti-robot"></i> Abrir EcoBot
+    </button>
+  </div>
+
+  <div class="chat-box">
+    <div class="chat-header">
+      <i class="ti ti-robot" aria-hidden="true"></i>
+      <span>EcoBot · Asistente IA</span>
+    </div>
+    <div class="chat-body">
+      <div class="bubble-user">Tengo una botella de plástico PET, ¿qué puedo hacer con ella?</div>
+      <div class="bubble-ai">
+        ¡Hay muchas opciones! Con tu botella PET puedes:
+        <div class="idea-chips">
+          <span class="idea-chip">🪴 Maceta colgante</span>
+          <span class="idea-chip">🐦 Comedero de aves</span>
+          <span class="idea-chip">🖊️ Portalápices</span>
+          <span class="idea-chip">💧 Mini invernadero</span>
+        </div>
+      </div>
+      <div class="bubble-ai" style="font-size:10px; color:#2d6a2d; background:#e8f5e9; border-color:#a5d6a7;">
+        Impacto estimado: evitar 0.03 kg de CO₂ y extender la vida útil del plástico 12 meses.
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" placeholder="Escribe tu residuo o duda..." readonly (click)="irAAsistente()">
+      <button class="chat-send" (click)="irAAsistente()"><i class="ti ti-send" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+  <div class="section-header">
+    <h2 class="section-title">Noticias y artículos</h2>
+    <a routerLink="/noticias" class="see-all">Ver más <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+  </div>
+  <div class="news-grid">
+    <div class="news-main" (click)="irANoticia('mexico-residuos-2030')" style="cursor:pointer;">
+      <div class="news-main-img">🌎</div>
+      <div class="news-main-body">
+        <span class="tip-tag tag-news">Medio ambiente</span>
+        <div style="font-size:13px; font-weight:500; color:var(--color-text-primary); margin-bottom:6px; line-height:1.4;">México avanza en metas de reducción de residuos para 2030</div>
+        <div style="font-size:11px; color:var(--color-text-secondary); line-height:1.5;">El gobierno federal presentó el nuevo plan de gestión de residuos sólidos alineado con la Agenda 2030 de la ONU...</div>
+        <div style="font-size:10px; color:var(--color-text-secondary); margin-top:8px; display:flex; gap:12px;">
+          <span><i class="ti ti-calendar" style="font-size:12px;" aria-hidden="true"></i> 3 jun 2026</span>
+          <span><i class="ti ti-clock" style="font-size:12px;" aria-hidden="true"></i> 4 min lectura</span>
+        </div>
+      </div>
+    </div>
+    <div class="news-list">
+      <div class="news-item" (click)="irANoticia('guadalajara-acopio')" style="cursor:pointer;">
+        <div class="news-item-title">Guadalajara suma más centros de acopio en 2026</div>
+        <div class="news-item-meta">
+          <span><i class="ti ti-calendar" style="font-size:11px;" aria-hidden="true"></i> 1 jun 2026</span>
+          <span>2 min</span>
+        </div>
+      </div>
+      <div class="news-item" (click)="irANoticia('economia-circular')" style="cursor:pointer;">
+        <div class="news-item-title">Economía circular: el futuro de la manufactura responsable</div>
+        <div class="news-item-meta">
+          <span><i class="ti ti-calendar" style="font-size:11px;" aria-hidden="true"></i> 28 may 2026</span>
+          <span>5 min</span>
+        </div>
+      </div>
+      <div class="news-item" (click)="irANoticia('apps-huella-carbono')" style="cursor:pointer;">
+        <div class="news-item-title">5 apps para medir tu huella de carbono en México</div>
+        <div class="news-item-meta">
+          <span><i class="ti ti-calendar" style="font-size:11px;" aria-hidden="true"></i> 25 may 2026</span>
+          <span>3 min</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

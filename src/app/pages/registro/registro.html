@@ -1,0 +1,28 @@
+<div class="registro-container">
+  <button class="btn-back" (click)="regresar()">
+    <i class="ti ti-arrow-left"></i> Volver al inicio
+  </button>
+  <div class="registro-card">
+    <div class="registro-header">
+      <i class="ti ti-leaf" style="color:#2d6a2d; font-size:36px;"></i>
+      <h1>Únete a EcoTips</h1>
+      <p>Crea tu cuenta y comienza a transformar tus hábitos de consumo</p>
+    </div>
+    <div class="form-group">
+      <label><i class="ti ti-user"></i> Nombre completo</label>
+      <input type="text" [(ngModel)]="nombre" placeholder="Tu nombre completo">
+    </div>
+    <div class="form-group">
+      <label><i class="ti ti-mail"></i> Correo electrónico</label>
+      <input type="email" [(ngModel)]="correo" placeholder="correo@ejemplo.com">
+    </div>
+    <div class="form-group">
+      <label><i class="ti ti-lock"></i> Contraseña</label>
+      <input type="password" [(ngModel)]="contrasena" placeholder="Mínimo 8 caracteres">
+    </div>
+    <button class="btn-primary btn-full" (click)="registrarse()">
+      <i class="ti ti-user-plus"></i> Crear cuenta gratis
+    </button>
+    <p class="login-link">¿Ya tienes cuenta? <a href="#">Inicia sesión</a></p>
+  </div>
+</div>
