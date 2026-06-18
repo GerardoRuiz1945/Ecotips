@@ -1,3 +1,4 @@
+[![EcoTips CI-CD Pipeline](https://github.com/GerardoRuiz1945/Ecotips/actions/workflows/webpack.yml/badge.svg)](https://github.com/GerardoRuiz1945/Ecotips/actions/workflows/webpack.yml)
 # EcotipsWeb
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
